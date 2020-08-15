@@ -15,12 +15,12 @@ var connection = mysql.createConnection({
   
     // Your password
     password: "Quito18!",
-    database: "employee_trackerDB"
+    database: "employer_trackerDB"
   });
   
 connection.connect(function(err) {
     if (err) throw err;
-    firstQuestion();
+    mainMenu();
   });
   
   function mainMenu() {
@@ -35,7 +35,8 @@ connection.connect(function(err) {
          "View All Employees By Manager",
          "Add Employee",
          "Update Employee Role",
-         "View All Roles"
+         "View All Roles",
+         "Exit"
         ]
       })
       .then(function(answer) {
@@ -63,6 +64,10 @@ connection.connect(function(err) {
         case "View All Roles":
             viewAllRoles();
             break;
+
+        case "Exit":
+          connection.end;
+          break;
         }
       });
   }
@@ -70,19 +75,15 @@ connection.connect(function(err) {
   function viewAllEmployees() {
       var query = ""
       connection.query(query, function(err, res) {
-        for (var i = 0; i < res.length; i++) {
-            console.log(res[i].artist);
-          }
+        console.table(res);
           mainMenu();
         });
       }
       
     function employeesByDept() {
-    var query = ""
+    var query = "SELECT * FROM department"
     connection.query(query, function(err, res) {
-        for (var i = 0; i < res.length; i++) {
-            console.log(res[i].artist);
-        }
+        console.table(res);
         mainMenu();
         });
     }
@@ -90,9 +91,7 @@ connection.connect(function(err) {
     function employeesByMan() {
         var query = ""
         connection.query(query, function(err, res) {
-            for (var i = 0; i < res.length; i++) {
-                console.log(res[i].artist);
-            }
+          console.table(res);
             mainMenu();
             });
         }
@@ -100,9 +99,7 @@ connection.connect(function(err) {
     function addEmployee() {
         var query = ""
         connection.query(query, function(err, res) {
-            for (var i = 0; i < res.length; i++) {
-                console.log(res[i].artist);
-            }
+          console.table(res);
             mainMenu();
             });
         }
@@ -110,19 +107,15 @@ connection.connect(function(err) {
     function updateEmployeeRole() {
         var query = ""
         connection.query(query, function(err, res) {
-            for (var i = 0; i < res.length; i++) {
-                console.log(res[i].artist);
-            }
+          console.table(res);
             mainMenu();
             });
         }
     
     function viewAllRoles() {
-        var query = ""
+        var query = "SELECT * FROM role"
         connection.query(query, function(err, res) {
-            for (var i = 0; i < res.length; i++) {
-                console.log(res[i].artist);
-            }
+          console.table(res);
             mainMenu();
             });
         }
