@@ -196,11 +196,6 @@ function addRole() {
 }
 
 function updateEmployeeRole() {
-  // const query = "SELECT id, first_name, last_name, role_id FROM employee";
-  // connection.query(query, function(err, res) {
-  //   if (err)
-  //     throw err;
-  //     console.table(res);
     inquirer
     .prompt([
       {
@@ -217,7 +212,7 @@ function updateEmployeeRole() {
     .then(function (res) {
         const updateEmploy = res.updateEmploy;
         const newRole = res.newRole;
-        const queryUpdate = `UPDATE employee SET role_id = "${newRole}" WHERE first_name = "${updateEmploy}")`;
+        const queryUpdate = `UPDATE employee SET role_id = "${newRole}" WHERE id = "${updateEmploy}"`;
         connection.query(queryUpdate, function (err, res) {
           if (err) {
             throw err;
@@ -227,7 +222,6 @@ function updateEmployeeRole() {
         })
       });
     }
-  
 
 
 
