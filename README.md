@@ -1,22 +1,47 @@
-<h2>Unit 12 MySQL Homework: Employee Tracker</h2>
-The purpose of this homework was to create a database where an employer can view and manager their departments, roles, and employees utilizng MySQL and Express.js.
+# Employee Tracker
 
-<h3>Code Style</h3>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>Express.js</li>
-  <li>SQL</li>
-</ul>
+## Description
 
-<h3>Prerequisites</h3>
-<ul>
-  <li>Visual Studio Code</li>
-  <li>GitHub Account</li>
-  <li>NPM Inquirer Package</li>
-  <li>MySQL Workbench</li>
-</ul>
+A database where an employer can view and manage their departments, roles, and employees.
 
-<h3>Employee Tracker Criteria</h3>
-<li>As a business owner, I want to view and manage the departments, roles, and employees in my company so that I can plan my business </li>
+
+![](firstpicture.png)
+
+![](secondpicture.png)
+
+## User story
+
+``` 
+As a business owner
+I want to be able to view and manage the departments, roles, and employees in my company
+So that I can organize and plan my business
+
+```
+
+
+## Table of Contents
+            
+* [Installation](#Installation)
+* [Built With](#Usage) 
+
+
+## Installation
+
+If you'd like to get a copy of the project up and running on your local machine for development and testing purposes, follow the instructions below.
+
+### Prequisites
+
+- MySQL Workbench
+
+### Git clone the repository to your local machine:
+
+ git clone https://github.com/ablizben/employee-tracker
+
+
+## Built With
+
+- [Express.js](https://expressjs.com/) - a Node.js-based web application framework
+- [MySQL](https://mysql.com/) - Open-source relational database management system
+- [Node.js](https://nodejs.org/en/) - Javascript Runtime Environment
+- [MongoDB](https://mongodb.com/) - NoSQL Document-oriented Database
+- Javascript, HTML, CSS
